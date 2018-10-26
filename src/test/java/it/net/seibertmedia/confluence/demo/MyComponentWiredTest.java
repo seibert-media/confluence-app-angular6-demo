@@ -6,6 +6,8 @@ import net.seibertmedia.confluence.demo.api.MyPluginComponent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static junit.framework.Assert.assertEquals;
+
 @RunWith(AtlassianPluginsTestRunner.class)
 public class MyComponentWiredTest {
 

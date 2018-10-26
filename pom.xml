@@ -9,12 +9,12 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<organization>
-		<name>Example Company</name>
-		<url>http://www.example.com/</url>
+		<name>//SEIBERT/MEDIA GmbH</name>
+		<url>https://www.seibert.media.net</url>
 	</organization>
 
 	<name>angulardemo</name>
-	<description>This is the net.seibertmedia.confluence.demo:angulardemo plugin for Atlassian Confluence.</description>
+	<description>This plugin describes howto integrate angular.io as frontend for your confluence or other atlassian tools.</description>
 	<packaging>atlassian-plugin</packaging>
 
 	<dependencies>
@@ -69,6 +69,12 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.2.2-atlassian-1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.sal</groupId>
+			<artifactId>sal-api</artifactId>
+			<version>3.0.6</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
