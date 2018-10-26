@@ -11,3 +11,25 @@ Here are the SDK commands you'll use immediately:
 Full documentation is always available at:
 
 https://developer.atlassian.com/display/DOCS/Introduction+to+the+Atlassian+Plugin+SDK
+
+
+
+## Base steps to do to setup this project:
+
+create a base project, you should already have atlassian sdk
+`atlas-create-confluence-plugin`
+
+create the angular-project:
+in projectroot/src/main:
+
+`ng new web`
+
+create a basic package.json in the projectroot with just the necessary things for building webpack.
+
+create the webpack-config in web root
+
+app.entry.ts with AJS.toInit
+
+
+##Todos
+* package.config files clean
