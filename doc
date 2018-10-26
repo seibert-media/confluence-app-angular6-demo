@@ -1,0 +1,7 @@
+create a base project, you should already have atlassian sdk
+atlas-create-confluence-plugin
+
+create the angular-project:
+in projectroot/src/main:
+
+ng new web
