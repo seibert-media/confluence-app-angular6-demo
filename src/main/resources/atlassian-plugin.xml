@@ -21,4 +21,19 @@
 		<context>angulardemo</context>
 	</web-resource>
 
+	<!-- Easy Events Navigationbar -->
+	<web-item key="event-hub-link" section="system.header/left" weight="70">
+		<label>Angular-Demo</label>
+		<link>/plugins/easyevents/event-hub.action</link>
+	</web-item>
+
+	<xwork key="event-hub-header-action" name="EasyEvents Hub">
+		<package name="event-hub-package-actions" extends="default" namespace="/plugins/easyevents">
+			<default-interceptor-ref name="defaultStack"/>
+			<action name="event-hub" class="net.seibertmedia.confluence.demo.action.AngularDemoAction">
+				<result name="success" type="velocity">/angulardemo_module.vm</result>
+			</action>
+		</package>
+	</xwork>
+
 </atlassian-plugin>
