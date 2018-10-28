@@ -11,9 +11,7 @@ const resources = "./src/main/web/src/";
 
 // We are exporting a Function instead of a configuration object so that we can
 // dynamically define the configuration object based on the execution mode.
-module.exports = (env, argv) =
->
-{
+module.exports = (env, argv) => {
 
   var isDevelopmentMode = (argv.mode === "development");
 
@@ -22,10 +20,7 @@ module.exports = (env, argv) =
   // that can help with debugging without giving away all of the source-code. This
   // production setting will give us proper file-names and line-numbers for debugging;
   // but, without actually providing any code content.
-  var devtool = isDevelopmentMode
-    ? "eval-source-map"
-    : "nosources-source-map"
-  ;
+  var devtool = isDevelopmentMode ? "eval-source-map" : "nosources-source-map";
 
   // By default, each module is identified based on Webpack's internal ordering. This
   // can cause issues for cache-busting and long-term browser caching as a localized
@@ -33,10 +28,8 @@ module.exports = (env, argv) =
   // identify modules based on a name that is order-independent. Both of the following
   // plugins do roughly the same thing; only, the one in development provides a longer
   // and more clear ID.
-  var moduleIdentifierPlugin = isDevelopmentMode
-    ? new webpack.NamedModulesPlugin()
-    : new webpack.HashedModuleIdsPlugin()
-  ;
+  var moduleIdentifierPlugin = isDevelopmentMode ? new webpack.NamedModulesPlugin() : new webpack.HashedModuleIdsPlugin();
+
 
   return ({
     context: path.resolve(resources),
@@ -131,5 +124,4 @@ module.exports = (env, argv) =
       // 	runtimeChunk: "single"
     }
   });
-}
-;
+};
