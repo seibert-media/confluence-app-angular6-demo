@@ -7,19 +7,19 @@ module.exports = function (env, argv) {
   return merge.smart(common(env, argv), {
     mode: "development",
     output: {
-      publicPath: "http://confluence:9090/"
+      publicPath: "http://localhost:9090/"
     },
     devServer: {
       host: 'confluence',
       port: 9090,
       proxy: {
         '/': {
-          target: 'http://confluence:8090',
+          target: 'http://localhost:1990',
           secure: false,
           prependPath: false
         }
       },
-      publicPath: 'http://confluence:9090/',
+      publicPath: 'http://localhost:9090/',
       historyApiFallback: true
     }
   });

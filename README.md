@@ -14,7 +14,7 @@ https://developer.atlassian.com/display/DOCS/Introduction+to+the+Atlassian+Plugi
 
 
 
-## Base steps to do to setup this project:
+## Rough steps to do to setup this project:
 
 create a base project, you should already have atlassian sdk
 `atlas-create-confluence-plugin`
@@ -29,6 +29,10 @@ create a basic package.json in the projectroot with just the necessary things fo
 create the webpack-config in web root
 
 app.entry.ts with AJS.toInit
+
+create entry-point in atlassian-plugin.xml
+
+
 
 
 ##Todos
