@@ -4,7 +4,7 @@
   <%= htmlWebpackPlugin.options.atlassiancontext %>
   <meta charset="utf-8">
   <meta name="decorator" content="atl.general"/>
-  <title>Web</title>
+  <title>Angular App</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">

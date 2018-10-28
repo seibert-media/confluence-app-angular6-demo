@@ -32,7 +32,10 @@ app.entry.ts with AJS.toInit
 
 create entry-point in atlassian-plugin.xml
 
-
+maven-changes
+ * add scanner for plugin-ressources
+ * add profile
+ * frontend-plugin
 
 
 ##Todos

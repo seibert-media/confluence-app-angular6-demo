@@ -116,6 +116,7 @@
 
 						<!-- Ensure plugin is spring powered -->
 						<Spring-Context>*</Spring-Context>
+						<Atlassian-Scan-Folders>META-INF/plugin-descriptors</Atlassian-Scan-Folders>
 					</instructions>
 				</configuration>
 			</plugin>
@@ -142,6 +143,45 @@
 					<verbose>false</verbose>
 				</configuration>
 			</plugin>
+
+
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>install node, npm and yarn</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+					</execution>
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>webpack build</id>
+						<goals>
+							<goal>webpack</goal>
+						</goals>
+						<configuration>
+							<arguments>${webpack.arguments}</arguments>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<nodeVersion>v10.9.0</nodeVersion>
+					<npmVersion>6.4.1</npmVersion>
+					<yarnVersion>v1.10.1</yarnVersion>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -156,6 +196,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<webpack.arguments>--config src/main/web/webpack.config.js</webpack.arguments>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<maven.test.skip>true</maven.test.skip>
+				<compressResources>false</compressResources>
+				<webpack.arguments>--config src/main/web/webpack.dev.config.js --mode development</webpack.arguments>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>
