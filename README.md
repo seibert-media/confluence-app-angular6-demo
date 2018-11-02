@@ -30,8 +30,12 @@ backend-files, you have to deploy the changes in order to run on the dev server.
 `npm run webpack-dev`
 
 After both services are up and running you should get your confluence here
-http://localhost:1990/confluence
-The login should be user admin, password admin
+[http://localhost:1990/confluence/plugins/angulardemo/angulardemo.action]([http://localhost:1990/confluence/plugins/angulardemo/angulardemo.action]()
+)
+The login should be user admin, password admin.
+
+Redeploy your plugin after java-changes:
+ `atlas-package -P dev`
 
 ## Rough steps done to setup this project
 

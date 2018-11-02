@@ -22,15 +22,15 @@
 	</web-resource>
 
 	<!-- Easy Events Navigationbar -->
-	<web-item key="event-hub-link" section="system.header/left" weight="70">
+	<web-item key="angular-demo-link" section="system.header/left" weight="70">
 		<label>Angular-Demo</label>
-		<link>/plugins/easyevents/event-hub.action</link>
+		<link>/plugins/angulardemo/angulardemo.action</link>
 	</web-item>
 
-	<xwork key="event-hub-header-action" name="EasyEvents Hub">
-		<package name="event-hub-package-actions" extends="default" namespace="/plugins/easyevents">
+	<xwork key="angular-demo-header-action" name="Angular demo">
+		<package name="angular-demo-package-actions" extends="default" namespace="/plugins/angulardemo">
 			<default-interceptor-ref name="defaultStack"/>
-			<action name="event-hub" class="net.seibertmedia.confluence.demo.action.AngularDemoAction">
+			<action name="angulardemo" class="net.seibertmedia.confluence.demo.action.AngularDemoAction">
 				<result name="success" type="velocity">/angulardemo_module.vm</result>
 			</action>
 		</package>
