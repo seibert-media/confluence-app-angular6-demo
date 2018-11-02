@@ -1,20 +1,39 @@
-You have successfully created an Atlassian Plugin!
+# Demo Confluence-plugin with Angular 6 UI
 
-Here are the SDK commands you'll use immediately:
+This is a demo project showing how to setup a confluence plugin with a modern Angular-App as frontend for
+the client. There are some problems solved that can help you in your own setup.
 
-* atlas-run   -- installs this plugin into the product and starts it on localhost
-* atlas-debug -- same as atlas-run, but allows a debugger to attach at port 5005
-* atlas-cli   -- after atlas-run or atlas-debug, opens a Maven command line window:
-                 - 'pi' reinstalls the plugin into the running product instance
-* atlas-help  -- prints description for all commands in the SDK
+## Basic setup strategy
 
-Full documentation is always available at:
+The strategy used is to use webpack to bundle all stuff from the angular app. WrmPlugin is used to 
+integrate into the atlassian-plugin.xml without any need to modify it manually.
 
-https://developer.atlassian.com/display/DOCS/Introduction+to+the+Atlassian+Plugin+SDK
+## Build and run
 
+### Production
 
+Production-build is exactly the same as for every confluence-plugin:
 
-## Rough steps to do to setup this project:
+`atlas-package`
+
+Maven will build the angular-app for you and plug it in your obr file.
+
+### Development-Server
+
+You will get a webpack development server running your angular app. It will automatically reload when
+you change the angular app. Your confluence-plugin will run on atlas-run server. If you change the java 
+backend-files, you have to deploy the changes in order to run on the dev server.
+
+1. Start your confluence dev server:  change to the project root and run
+`atlas-run -P dev`
+1. In a second terminal, again from your project root, start your webpack-dev-server
+`npm run webpack-dev`
+
+After both services are up and running you should get your confluence here
+http://localhost:1990/confluence
+The login should be user admin, password admin
+
+## Rough steps done to setup this project
 
 create a base project, you should already have atlassian sdk
 `atlas-create-confluence-plugin`
@@ -40,3 +59,5 @@ maven-changes
 
 ##Todos
 * package.config files clean
+* setup tests
+
