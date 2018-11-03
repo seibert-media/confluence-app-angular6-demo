@@ -6,5 +6,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Confluence Angular demo';
+  searchTerm: string;
+
+  searchForTerm(test: any) {
+    console.log("will search for ", this.searchTerm, test);
+  }
 }
