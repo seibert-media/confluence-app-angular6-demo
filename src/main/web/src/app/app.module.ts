@@ -4,6 +4,8 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {Contentsearch} from "../providers/contentsearch";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -13,8 +15,9 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     CommonModule,
     FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [Contentsearch],
   bootstrap: [AppComponent]
 })
 export class AppModule {

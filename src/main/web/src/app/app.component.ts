@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {Contentsearch} from "../providers/contentsearch";
+import {SearchResult} from "../search-result";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,15 @@ import {Component} from '@angular/core';
 export class AppComponent {
   searchTerm: string;
 
-  searchForTerm(test: any) {
-    console.log("will search for ", this.searchTerm, test);
+  resultList: Array<SearchResult> = [];
+
+  constructor(public contentSearch: Contentsearch) {
+  }
+
+  searchForTerm() {
+    console.log("will search for ", this.searchTerm);
+    this.contentSearch.searchContent(this.searchTerm).then((r:Array<SearchResult>)=> {
+      this.resultList = r;
+    });
   }
 }
