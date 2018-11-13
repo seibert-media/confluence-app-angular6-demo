@@ -40,7 +40,7 @@ Redeploy your plugin after java-changes:
 
 
 
-##Todos
+## Todos
 * package.config files clean
 * setup tests
 
