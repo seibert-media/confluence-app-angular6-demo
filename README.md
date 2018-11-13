@@ -37,28 +37,7 @@ The login should be user admin, password admin.
 Redeploy your plugin after java-changes:
  `atlas-package -P dev`
 
-## Rough steps done to setup this project
 
-create a base project, you should already have atlassian sdk
-`atlas-create-confluence-plugin`
-
-create the angular-project:
-in projectroot/src/main:
-
-`ng new web`
-
-create a basic package.json in the projectroot with just the necessary things for building webpack.
-
-create the webpack-config in web root
-
-app.entry.ts with AJS.toInit
-
-create entry-point in atlassian-plugin.xml
-
-maven-changes
- * add scanner for plugin-ressources
- * add profile
- * frontend-plugin
 
 
 ##Todos
